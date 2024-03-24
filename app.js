@@ -7,6 +7,9 @@ const userRouter = require(path.join(__dirname, "routes", "user"))
 const app = express();
 const PORT = process.env.PORT || 4000;
 
+app.use(express.json())
+app.use(express.urlencoded({extended: true}))
+
 app.use("/users", userRouter)
 
 app.listen(PORT, () => {
